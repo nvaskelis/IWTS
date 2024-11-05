@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=7 format=3 uid="uid://cq7dsm0qjpvp1"]
+
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="1_t0uk1"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="1_tccv6"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_j7h2r"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="3_3x5xj"]
+
+[sub_resource type="Resource" id="Resource_86ksk"]
+script = ExtResource("2_j7h2r")
+scene = ExtResource("1_t0uk1")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_82061"]
+script = ExtResource("2_j7h2r")
+scene = ExtResource("3_3x5xj")
+overrides = {
+"bold_font": "\"res://fonts/UbuntuMono/UbuntuMono-Bold.ttf\"",
+"bold_italic_font": "\"res://fonts/UbuntuMono/UbuntuMono-BoldItalic.ttf\"",
+"box_animation_in": "1",
+"box_animation_new_text": "1",
+"box_animation_out": "1",
+"box_size": "Vector2(350, 60)",
+"italic_font": "\"res://fonts/UbuntuMono/UbuntuMono-Italic.ttf\"",
+"name_label_alignment": "2",
+"name_label_custom_font_size": "10.0",
+"name_label_font": "\"res://fonts/UbuntuMono/UbuntuMono-Bold.ttf\"",
+"next_indicator_size": "Vector2(10, 10)",
+"normal_font": "\"res://fonts/UbuntuMono/UbuntuMono-Regular.ttf\"",
+"text_size": "10.0"
+}
+
+[resource]
+script = ExtResource("1_tccv6")
+name = "teststyle"
+base_overrides = {}
+layers = Array[ExtResource("2_j7h2r")]([SubResource("Resource_86ksk"), SubResource("Resource_82061")])
+metadata/_latest_layer = -1

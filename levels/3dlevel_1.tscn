@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bd7dsfd5n3unp"]
+
+[ext_resource type="Material" uid="uid://35ol31sk5jkp" path="res://materials/mat_test1.tres" id="1_jcdyr"]
+[ext_resource type="PackedScene" uid="uid://lngqfb8wbasd" path="res://objects/player.tscn" id="2_wtsgi"]
+
+[sub_resource type="Sky" id="Sky_h6a7f"]
+
+[sub_resource type="Environment" id="Environment_wrbr6"]
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_h6a7f")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.16
+
+[sub_resource type="BoxMesh" id="BoxMesh_wdbng"]
+material = ExtResource("1_jcdyr")
+size = Vector3(8, 4, 4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6pmg4"]
+data = PackedVector3Array(-4, 2, 2, 4, 2, 2, -4, -2, 2, 4, 2, 2, 4, -2, 2, -4, -2, 2, 4, 2, -2, -4, 2, -2, 4, -2, -2, -4, 2, -2, -4, -2, -2, 4, -2, -2, 4, 2, 2, 4, 2, -2, 4, -2, 2, 4, 2, -2, 4, -2, -2, 4, -2, 2, -4, 2, -2, -4, 2, 2, -4, -2, -2, -4, 2, 2, -4, -2, 2, -4, -2, -2, 4, 2, 2, -4, 2, 2, 4, 2, -2, -4, 2, 2, -4, 2, -2, 4, 2, -2, -4, -2, 2, 4, -2, 2, -4, -2, -2, 4, -2, 2, 4, -2, -2, -4, -2, -2)
+
+[node name="3dlevel1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wrbr6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(49.4447, 0, 0, 0, 0.338301, 0, 0, 0, 38.9471, 0, 0, 0)
+use_collision = true
+material = ExtResource("1_jcdyr")
+
+[node name="player" parent="." instance=ExtResource("2_wtsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.584495, 0)
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.905886, 0, 0.383894, 0, 1.2, 0, -0.663008, 0, 0.524524, 9.32907, 2.55164, -1.82291)
+mesh = SubResource("BoxMesh_wdbng")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6pmg4")

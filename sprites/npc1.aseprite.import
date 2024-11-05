@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://3ckinoviavlv"
+path="res://.godot/imported/npc1.aseprite-78d0bb9f5b45fd027b8a5df20a8b17f0.res"
+
+[deps]
+
+source_file="res://sprites/npc1.aseprite"
+dest_files=["res://.godot/imported/npc1.aseprite-78d0bb9f5b45fd027b8a5df20a8b17f0.res"]
+
+[params]
+

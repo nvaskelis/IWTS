@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://spdenhe2cqel"
+path="res://.godot/imported/steev.aseprite-c83f6a2aa4aff78e4dd3db5586ca74bc.res"
+
+[deps]
+
+source_file="res://sprites/steev.aseprite"
+dest_files=["res://.godot/imported/steev.aseprite-c83f6a2aa4aff78e4dd3db5586ca74bc.res"]
+
+[params]
+

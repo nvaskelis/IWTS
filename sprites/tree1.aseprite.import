@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.tileset-texture"
+type="PackedDataContainer"
+uid="uid://h2drd0ebgk3d"
+path="res://.godot/imported/tree1.aseprite-bfaafe8003cd4e487486d289fd24e2cc.res"
+
+[deps]
+
+source_file="res://sprites/tree1.aseprite"
+dest_files=["res://.godot/imported/tree1.aseprite-bfaafe8003cd4e487486d289fd24e2cc.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

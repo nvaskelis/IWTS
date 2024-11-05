@@ -1,0 +1,224 @@
+[gd_scene load_steps=11 format=3 uid="uid://i8mhif6cq22j"]
+
+[ext_resource type="Script" path="res://scripts/steev.gd" id="1_yvgur"]
+[ext_resource type="FontFile" uid="uid://mw0q0gepnram" path="res://fonts/UbuntuMono/UbuntuMono-Regular.ttf" id="3_c7qi7"]
+[ext_resource type="Texture2D" uid="uid://dulaordrkxycx" path="res://alert.png" id="3_r016x"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2p28a"]
+load_path = "res://.godot/imported/D1-30.png-3a192458199c08c6419aab9621a00d71.ctex"
+
+[sub_resource type="Animation" id="Animation_73shc"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_2p28a")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_2psrt"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_2p28a")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wmaip"]
+_data = {
+"idle": SubResource("Animation_73shc"),
+"walk": SubResource("Animation_2psrt")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8crrp"]
+size = Vector2(12.75, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_db1ff"]
+radius = 19.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_bxkw5"]
+font = ExtResource("3_c7qi7")
+font_size = 8
+shadow_size = 0
+
+[node name="steev" type="CharacterBody2D"]
+script = ExtResource("1_yvgur")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wmaip")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+texture = SubResource("CompressedTexture2D_2p28a")
+offset = Vector2(0, -16)
+hframes = 3
+vframes = 3
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"op_exp": false,
+"player": "AnimationPlayer",
+"source": "res://sprites/D1-30.aseprite"
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_8crrp")
+
+[node name="Interactions" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(0, -16)
+
+[node name="interactArea" type="Area2D" parent="Interactions"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="interactCollision" type="CollisionShape2D" parent="Interactions/interactArea"]
+shape = SubResource("CircleShape2D_db1ff")
+
+[node name="interactLabel" type="Label" parent="Interactions"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -31.0
+offset_right = 103.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Test"
+label_settings = SubResource("LabelSettings_bxkw5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="alert" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -39)
+texture = ExtResource("3_r016x")
+
+[connection signal="area_entered" from="Interactions/interactArea" to="." method="_on_interact_area_area_entered"]
+[connection signal="area_exited" from="Interactions/interactArea" to="." method="_on_interact_area_area_exited"]
